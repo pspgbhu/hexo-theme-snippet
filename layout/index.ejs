@@ -1,6 +1,6 @@
-<div class="carousel">
+<!-- <div class="carousel">
     <%- image_tag('img/head-img.jpg') %>
-</div>
+</div> -->
 
 <% if(page.posts && page.posts.length){ %>
 <% page.posts.forEach(function (post, i) { %>
@@ -17,7 +17,7 @@
     <% if(_photoUrl) {%>
         <div class="post-media">
             <a href="javascript:">
-                <img class="img-ajax" src="<%- url_for('/img/loading.gif') %>"  data-src="<%- url_for(_photoUrl) %>"   alt="<%- post.title %>"> 
+                <img class="img-ajax" src="<%- url_for('/img/loading.gif') %>"  data-src="<%- url_for(_photoUrl) %>"   alt="<%- post.title %>">
             </a>
         </div>
     <% } %>
@@ -34,14 +34,14 @@
         </div>
         <p class="brief">
             <%- truncate(strip_html(post.content), {length: theme.excerptLength || 120, omission: '...'}) %>
-        </p> 
+        </p>
     </div>
     <footer class="post-footer clearfix">
         <div class="pull-left tag-list">
             <%- partial('_partial/article-meta', {post: post}) %>
         </div>
 
-        <div class="post-permalink"> 
+        <div class="post-permalink">
             <a href="<%- url_for(post.path) %>" class="btn btn-default">阅读全文</a>
         </div>
     </footer>

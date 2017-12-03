@@ -5,25 +5,25 @@
 menu:
 - page: home
   url: /
-  icon: 
-- page: 前端
-  url: /categories/前端/
-  icon: 
-- page: 后端
-  url: /categories/后端/
-  icon: 
-- page: 工具
-  url: /categories/工具/
-  icon: 
-- page: 资源
-  url: /categories/资源/
-  icon: 
+  icon:
+# - page: 前端
+#  url: /categories/前端/
+#  icon:
+#- page: 后端
+#  url: /categories/后端/
+#  icon:
+#- page: 工具
+#  url: /categories/工具/
+#  icon:
+#- page: 资源
+#  url: /categories/资源/
+#  icon:
 
-## favicon 
+## favicon
 favicon: /favicon.ico
 
-## Feed 
-rss: /atom.xml
+## Feed
+# rss: /atom.xml
 
 
 # 各个小工具的设置
@@ -31,12 +31,12 @@ rss: /atom.xml
 ## widgets
 widgets:
   - search
-  - notification
+  # - notification
   - social
   - category
   - archive
   - tagcloud
-  - friends
+  # - friends
 
 ## 搜索
 jsonContent:
@@ -46,7 +46,7 @@ jsonContent:
     title: true
     text: true
     content: true
-    categories: false
+    categories: true
     tags: false
 
 ## 网站公告设置
@@ -60,22 +60,22 @@ notification: |-
 social:
  - name: Github
    icon: git
-   href: //github.com/shenliyang
+   href: //github.com/pspgbhu
  - name: 邮箱
    icon: envelope-o
-   href: mailto:snippet@91h5.cc
- - name: 联系QQ
-   icon: qq
-   href: /
- - name: 微博
-   icon: weibo
-   href: /
- - name: QQ群
-   icon: users
-   href: /
- - name: RSS
-   icon: feed
-   href: /atom.xml
+   href: mailto:brotherchun001@gmail.com
+ #- name: 联系QQ
+   #icon: qq
+   #href: /
+ #- name: 微博
+   #icon: weibo
+   #href: /
+ #- name: QQ群
+   #icon: users
+   #href: /
+ #- name: RSS
+   #icon: feed
+   #href: /atom.xml
 
 ## 文章分类设置
 cate_config:
@@ -89,8 +89,8 @@ arch_config:
    order: -1
 
 ## 友链设置
-links:
-  - 个人博客: http://www.shenliyang.com
+#links:
+  #- 个人博客: http://www.shenliyang.com
 
 
 # 主题自定义个性化配置
@@ -100,11 +100,11 @@ branding:
 
 ## 设置banner背景图片
 banner:
-    img: http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg
+    img:
 
 ## 缩略图自定义随机图片
 defaultImgs:
-  - 
+  -
 
 ## 截取文章首页描述字数
 excerptLength: 120
@@ -120,7 +120,7 @@ fontAwesome: //cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css
 
 ## 文章过期提醒功能
 warning:
-  days: 300
+  days: 0
   text: '本文于%d天之前发表，文中内容可能已经过时。'
 
 ## 文章内声明
@@ -128,17 +128,16 @@ declaration:
   enable: true
   title: '转载声明'
   tip: |-
-      商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
-
+    '版权声明: 署名-非商业性使用-禁止演绎 3.0 国际（<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh" target="_blank">CC BY-NC-ND 3.0</a>）'
 
 ## 主题评论
 ### gitment
 gitment:
   enable: false
-  owner: 
-  repo: 
-  client_id: 
-  client_secret: 
+  owner:
+  repo:
+  client_id:
+  client_secret:
   perPage: 10
 
 
@@ -151,16 +150,16 @@ uyan:
 ## 网站访问统计
 
 ### 网盟CNZZ统计
-cnzz_analytics: 1263868967
+cnzz_analytics:
 
 ### 百度统计
-baidu_analytics: 
+baidu_analytics: 'd070ebb446fed478ed891d81a815bd3d'
 
 ### 谷歌统计
-google_analytics: 
+google_analytics:
 
 ### 腾讯分析
-tencent_analytics: 
+tencent_analytics:
 
 ### 百度文章推送
 baidu_push:
