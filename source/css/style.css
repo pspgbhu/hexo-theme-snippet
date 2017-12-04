@@ -278,7 +278,7 @@ pre {
   padding-top: 15px;
 }
 .main-header .main-header-box .branding h2 {
-  font-family: "STXingkai", "KaiTi", "Microsoft YaHei", "SimSun", sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
   width: 320px;
   margin: 0 auto;
   letter-spacing: 3px;
@@ -498,7 +498,7 @@ pre {
   main post content
 ====================================================*/
 .post-content {
-  font: 400 16px/1.62 "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+  font: 400 16px/1.62 "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
   color: #333;
 }
 .post-content h1 {
@@ -667,7 +667,7 @@ pre {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
   word-wrap: break-word;
 }
 .post-content tt {
@@ -679,7 +679,7 @@ pre {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
   word-wrap: break-word;
 }
 .post-content pre {
@@ -691,7 +691,7 @@ pre {
   overflow: auto;
   line-height: 1.5;
   font-size: 0.96em;
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
   color: #808080;
   background-color: #f9f9f9;
 }
@@ -745,7 +745,7 @@ pre {
 }
 .windows .post-content {
   font-size: 16px;
-  font-family: "Georgia", "SimSun", sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
 }
 /*====================================================
     pagination

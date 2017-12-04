@@ -1,4 +1,4 @@
-<%if(theme.baidu_analytics){%>
+<%if(theme.baidu_analytics && env.env !== 'development'){%>
     <script>
         var _hmt = _hmt || [];
         (function() {
