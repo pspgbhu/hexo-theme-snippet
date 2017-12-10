@@ -13,10 +13,10 @@ window.onload = function() {
         timer = null;
 
     //手机菜单导航
-    $mnav.onclick = function(){  
+    $mnav.onclick = function(){
         var navOpen = $mainMenu.getAttribute("class");
         if(navOpen.indexOf("in") != '-1'){
-            $mainMenu.setAttribute("class","collapse navbar-collapse"); 
+            $mainMenu.setAttribute("class","collapse navbar-collapse");
         } else {
             $mainMenu.setAttribute("class","collapse navbar-collapse in");
         }
@@ -101,7 +101,7 @@ window.onload = function() {
 	    timer = requestAnimationFrame(function fn() {
 	        var sTop = getScrollTop();
 	        if (sTop > 0) {
-	            $body.scrollTop = document.documentElement.scrollTop = sTop - 50;
+	            $body.scrollTop = document.documentElement.scrollTop = sTop - 200;
 	            timer = requestAnimationFrame(fn);
 	        } else {
 	            cancelAnimationFrame(timer);

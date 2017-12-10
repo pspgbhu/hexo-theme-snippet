@@ -46,7 +46,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 400;
+  font-weight: bold;
   color: #303030;
 }
 h1 {
@@ -464,7 +464,7 @@ pre {
 }
 .post .post-body p {
   font-size: 1em;
-  line-height: 1.5;
+  line-height: 1.7;
 }
 .post .post-body p img {
   max-width: 100%;
@@ -544,6 +544,7 @@ pre {
 }
 .post-content p {
   font-size: 15px;
+  margin: 0 0 25px;
 }
 .post-content a {
   word-wrap: break-word;
@@ -584,7 +585,6 @@ pre {
   outline: 0;
   margin: 10px 0 30px;
   padding: 0;
-  min-height: 100px;
 }
 .post-content figure img {
   display: block;
@@ -618,10 +618,13 @@ pre {
   margin: 0 0 1.64em 0;
   border-left: 3px solid #e67e22;
   padding-left: 12px;
-  color: #666666;
+  color: #333;
 }
 .post-content blockquote a {
-  color: #666666;
+  color: #e67e22;
+}
+.post-content blockquote p::last-child {
+  margin-bottom: 0;
 }
 .post-content ul {
   margin: 0 0 24px 6px;
@@ -659,7 +662,6 @@ pre {
   padding: 0;
 }
 .post-content code {
-  color: #808080;
   font-size: 0.96em;
   background-color: #f9f9f9;
   padding: 1px 2px;
@@ -684,22 +686,19 @@ pre {
 }
 .post-content pre {
   margin: 1.64em 0;
-  padding: 7px;
+  padding: 16px;
   border: none;
-  border-left: 3px solid #dadada;
-  padding-left: 10px;
   overflow: auto;
   line-height: 1.5;
-  font-size: 0.96em;
+  font-size: 0.85em;
   font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
-  color: #808080;
-  background-color: #f9f9f9;
+  background-color: #f6f8fa;
 }
 .post-content pre code {
-  color: #808080;
   border: none;
   background: none;
   padding: 0;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 .post-content pre tt {
   color: #808080;

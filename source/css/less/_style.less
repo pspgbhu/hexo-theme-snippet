@@ -30,7 +30,7 @@ body {
     font-family: @font_family_1;
 }
 h1,h2,h3,h4,h5,h6 {
-    font-weight: 400;
+    font-weight: bold;
     color: @grey3_color;
 }
 h1 {
@@ -440,7 +440,7 @@ pre {
         overflow: hidden;
         p {
             font-size: 1em;
-            line-height: 1.5;
+            line-height: 1.7;
             img {
                 max-width: 100%;
             }
@@ -522,6 +522,7 @@ pre {
     }
     p {
         font-size: 15px;
+        margin: 0 0 25px;
     }
     a {
         word-wrap: break-word;
@@ -562,7 +563,7 @@ pre {
         outline: 0;
         margin: 10px 0 30px;
         padding: 0;
-        min-height: 100px;
+        // min-height: 100px;
         img {
             display: block;
             max-width: 100%;
@@ -596,9 +597,13 @@ pre {
         margin: 0 0 1.64em 0;
         border-left: 3px solid @theme_color;
         padding-left: 12px;
-        color: @black6_color;
+        color: @black3_color;
         a {
-            color: @black6_color;
+            color: @theme_color;
+        }
+
+        p::last-child {
+          margin-bottom: 0;
         }
     }
     ul {
@@ -637,7 +642,7 @@ pre {
         padding: 0;
     }
     code {
-        color: @grey8_color;
+        // color: @grey8_color;
         font-size: 0.96em;
         background-color: @greyish_color;
         padding: 1px 2px;
@@ -658,21 +663,18 @@ pre {
     }
     pre {
         margin: 1.64em 0;
-        padding: 7px;
+        padding: 16px;
         border: none;
-        border-left: 3px solid #dadada;
-        padding-left: 10px;
         overflow: auto;
         line-height: 1.5;
-        font-size: 0.96em;
+        font-size: 0.85em;
         font-family: @font_family_1;
-        color: @grey8_color;
-        background-color: @greyish_color;
+        background-color: #f6f8fa;
         code {
-            color: @grey8_color;
             border: none;
             background: none;
             padding: 0;
+            font-family: @font_family_3;
         }
         tt {
             color: @grey8_color;
