@@ -908,6 +908,20 @@ pre {
 .widget .friends-link a {
   margin-right: 15px;
 }
+.widget .toc {
+  list-style: none;
+  padding-left: 0;
+}
+.widget .toc li {
+  list-style: none;
+}
+.widget .toc ol {
+  padding-left: 26px;
+}
+.widget .toc .toc-level-5,
+.widget .toc .toc-level-6 {
+  display: none;
+}
 .widget #search-form {
   position: relative;
   width: 100%;

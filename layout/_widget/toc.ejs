@@ -1,0 +1,6 @@
+<% if (page && page.content){ %>
+  <div class="widget">
+    <h3 class="title">目录</h3>
+    <%- toc(page.content, {list_number: false}) %>
+  </div>
+<% } %>

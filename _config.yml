@@ -30,6 +30,7 @@ favicon: //static.pspgbhu.me/favicon.jpg
 
 ## widgets
 widgets:
+  - toc
   - search
   # - notification
   - social
