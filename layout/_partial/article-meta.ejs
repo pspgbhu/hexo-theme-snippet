@@ -31,8 +31,10 @@
         <span class="date-meta"><%- date(post.date, format) %></span>
     </span>
 
+    <% if(page.comments){ %>
     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="fa-wrap">
-      <span id="busuanzi_container_site_pv">阅读 <span id="busuanzi_value_site_pv"></span></span>
+      <span id="busuanzi_container_page_pv">阅读 <span id="busuanzi_value_page_pv"></span></span>
     </span>
+    <% } %>
 </div>
