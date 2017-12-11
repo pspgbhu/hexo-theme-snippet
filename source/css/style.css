@@ -662,10 +662,10 @@ pre {
   padding: 0;
 }
 .post-content code {
+  font-size: 0.85em;
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   padding: 0.2em 0.4em;
   margin: 0;
-  font-size: 0.85em;
   background-color: rgba(27, 31, 35, 0.05);
   border-radius: 3px;
   word-wrap: break-word;
@@ -689,6 +689,7 @@ pre {
   overflow: auto;
   line-height: 1.5;
   background-color: #f6f8fa;
+  font-size: 16px;
 }
 .post-content pre code {
   border: none;
