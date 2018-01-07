@@ -3,5 +3,11 @@
         <% theme.widgets.forEach(function(widget){ %>
         <%- partial('_widget/' + widget) %>
         <% }) %>
+        <% if (page.published){ %>
+          <div class="widget toc-floating">
+            <h3 class="title">目录</h3>
+            <%- toc(page.content, {list_number: false}) %>
+          </div>
+        <% } %>
     </aside>
 <%}%>

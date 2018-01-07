@@ -64,7 +64,7 @@
     }
     function content(art){
     	var keyword = searchWord.value;
-    	var index = art.indexOf(keyword);	
+    	var index = art.indexOf(keyword);
     	var artRe = art.replace(keyword, '<b>' + keyword + '</b>');
     	if (index > 0){
             return artRe.substr(index-15, 45);
