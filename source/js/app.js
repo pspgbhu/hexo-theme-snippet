@@ -1,8 +1,26 @@
 /*!========================================================================
  *  hexo-theme-snippet: app.js v1.0.0
  * ======================================================================== */
-window.onload = function () {
-  var $body = document.body,
+
+function Utils() {
+  return {
+    getStyle(obj, attr) {
+      if (obj.currentStyle) { // currentStyle是针对ie浏览器
+        return obj.currentStyle[attr];
+      } else {
+        return getComputedStyle(obj, false)[attr]; // 针对火狐浏览器
+      }
+    }
+  }
+}
+
+function cc(params) {
+}
+
+; (function () {
+  var utils = Utils();
+  var
+    $body = document.body,
     $mnav = document.getElementById("mnav"), //获取导航三角图标
     $mainMenu = document.getElementById("main-menu"), //手机导航
     $process = document.getElementById('process'), //进度条
@@ -11,6 +29,7 @@ window.onload = function () {
     $gitcomment = document.getElementById("gitcomment"),
     $backToTop = document.getElementById("back-to-top"),
     timer = null;
+
 
   //手机菜单导航
   $mnav.onclick = function () {
@@ -77,6 +96,7 @@ window.onload = function () {
   function getScrollTop() {
     return ($body.scrollTop || document.documentElement.scrollTop);
   }
+
   //滚动回调
   var scrollCallback = function () {
     if ($process) {
@@ -95,53 +115,82 @@ window.onload = function () {
     }, 200);
   });
 
+
+
+  /**
+   * 加载附加功能
+   */
+  loadFeatures(
+    backToTop,
+    toc
+  );
+
   //返回顶部
-  $backToTop.onclick = function () {
-    cancelAnimationFrame(timer);
-    timer = requestAnimationFrame(function fn() {
-      var sTop = getScrollTop();
-      if (sTop > 0) {
-        $body.scrollTop = document.documentElement.scrollTop = sTop - 200;
-        timer = requestAnimationFrame(fn);
-      } else {
+  function backToTop() {
+    var f = {};
+    f.init = function () {
+      $backToTop.onclick = function () {
         cancelAnimationFrame(timer);
-      }
-    });
-  };
+        timer = requestAnimationFrame(function fn() {
+          var sTop = getScrollTop();
+          if (sTop > 0) {
+            $body.scrollTop = document.documentElement.scrollTop = sTop - 200;
+            timer = requestAnimationFrame(fn);
+          } else {
+            cancelAnimationFrame(timer);
+          }
+        });
+      };
+    }
+    return f;
+  }
 
-  // toc floating
-  window.features.toc.init();
-};
 
+  /**
+   * 书签吸顶功能
+   */
+  function toc() {
+    var f = {
+      MIN_WIDTH: 768,
+      isFloating: false,
+      width: '200px',
+      $el: document.querySelector('.toc-floating'),
+      top: 999999,
+      inited: false,
+      active: false,
+    };
 
-window.features = {
-  toc: {
-    isFloating: false,
-    width: '200px',
-    $el: document.querySelector('.toc-floating'),
-    top: 999999,
-
-    init: function () {
+    f.init = function () {
       if (!this.$el) return;
+
+      if (!this.inited) {
+        this.bindResize();
+      }
+
+      if (window.innerWidth <= this.MIN_WIDTH) return;
 
       this.top = this.$el.offsetTop + document.querySelector('.sidebar').offsetTop;
       this.width = utils.getStyle(this.$el, 'width');
       this.$el.style.width = this.width;
       this.bindEvent();
-    },
 
-    bindEvent: function () {
+      this.inited = true;
+      this.active = true;
+    };
+
+    f.bindEvent = function () {
       var that = this;
       var timer = null;
-      window.addEventListener('scroll', function(e) {
-        // clearTimeout(timer);
-        // timer = setTimeout(function() {
-        that.scrollHandler(e);
-        // }, 100);
-      });
-    },
+      this.scrollHandler = this.scrollHandler.bind(this);
+      window.addEventListener('scroll', this.scrollHandler);
+    };
 
-    scrollHandler: function (e) {
+    f.unbindEvent = function () {
+      this.unsetFloating();
+      window.removeEventListener('scroll', this.scrollHandler);
+    };
+
+    f.scrollHandler = function (e) {
       const top = window.scrollY;
       if ((top <= this.top && !this.isFloating)
         || (top > this.top && this.isFloating)
@@ -149,28 +198,54 @@ window.features = {
 
       if (!this.isFloating && top > this.top) { this.setFloating() }
       if (this.isFloating && top <= this.top) { this.unsetFloating() }
-    },
+    };
 
-    setFloating: function () {
+    f.setFloating = function () {
       this.isFloating = true;
       this.$el.classList.add('toc-floating-on');
-    },
+    };
 
-    unsetFloating: function () {
+    f.unsetFloating = function () {
       this.isFloating = false;
       this.$el.classList.remove('toc-floating-on');
-    },
-  },
-};
+    };
+
+    f.bindResize = function () {
+      var timer = null;
+      var that = this;
+      window.addEventListener('resize', function () {
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+          if (window.innerWidth <= that.MIN_WIDTH && that.inited) {
+            that.unbindEvent();
+            that.active = false;
+          } else if (!that.active) {
+            that.init();
+          }
+        }, 200);
+      });
+    };
+
+    return f;
+  }
 
 
-window.utils = {
-  getStyle(obj, attr) {
-    if (obj.currentStyle) { // currentStyle是针对ie浏览器
-      return obj.currentStyle[attr];
-    } else {
-      return getComputedStyle(obj, false)[attr]; // 针对火狐浏览器
+  /**
+   * 加载多个附加功能
+   */
+  function loadFeatures() {
+    var fns = Array.prototype.slice.call(arguments);
+    for (var i = 0; i < fns.length; i += 1) {
+      if (typeof fns[i] !== 'function') {
+        console.error('loadFeatures only accept function type as a param!\n but accpet:', fns[i]);
+        return;
+      }
+      var feature = fns[i]();
+      if (typeof feature.init !== 'function') {
+        console.error('No init method in feature function');
+      }
+      feature.init();
     }
   }
-};
 
+}());
