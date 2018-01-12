@@ -1,3 +1,7 @@
+更改自 hexo-theme-snippet 主题，目前用于 [pspgbhu 的博客](http://blog.pspgbhu.me)。
+
+以下内容为 hexo-theme-snippet README 内容： 
+
 # hexo-theme-snippet
 
 Snippet 简洁而不简单，也许是一款你寻找已久hexo主题。
