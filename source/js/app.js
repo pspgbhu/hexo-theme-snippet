@@ -151,7 +151,7 @@ function cc(params) {
    */
   function toc() {
     var f = {
-      MIN_WIDTH: 768,
+      MIN_WIDTH: 992,
       isFloating: false,
       width: '200px',
       $el: document.querySelector('.toc-floating'),

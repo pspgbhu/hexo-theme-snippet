@@ -180,6 +180,7 @@ textarea:focus {
 blockquote {
   border-left: 4px solid #e67e22;
   background-color: #f9f9f9;
+  font-size: 1em;
 }
 pre {
   padding: 0;
@@ -512,6 +513,8 @@ pre {
   color: #333;
   font-size: 1.5em;
   margin: 0.83em 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.3em;
 }
 .post-content h3 {
   font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
@@ -1181,4 +1184,6 @@ pre {
 .toc-floating-on {
   position: fixed;
   top: 0;
+  max-height: 100%;
+  overflow-y: scroll;
 }
