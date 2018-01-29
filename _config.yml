@@ -132,19 +132,19 @@ declaration:
     版权声明: 署名-非商业性使用-禁止演绎 3.0 国际（<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh" target="_blank">CC BY-NC-ND 3.0</a>）
 
 ## 主题评论
+
 ### gitment
 gitment:
-  enable: false
-  owner:
-  repo:
-  client_id:
-  client_secret:
+  enable: true
+  owner: pspgbhu
+  repo: my-blog-message
+  client_id: f0109912955c9ab71e4d
+  client_secret: 69bc375d03ad7c5f75e92736d80d79b8cbf7cf7d
   perPage: 10
-
 
 ### 友言评论
 uyan:
-  enable: true
+  enable: false
   uyan_id: 1966422
 
 

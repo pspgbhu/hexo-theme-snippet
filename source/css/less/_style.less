@@ -76,12 +76,10 @@ a {
     background: @theme_color;
     color: @white_color;
     .transition(all 0.2s ease-in-out);
-    &:hover {
-        .border;
-        background: @grey3_color;
+    &:hover, &:focus {
+        .border(@btn_hover);
+        background: @btn_hover;
         color: @white_color;
-    }
-    &:focus {
         outline: none;
     }
 }
@@ -1031,6 +1029,10 @@ pre {
 }
 
 /*====================================================
+   comments
+====================================================*/
+
+/*====================================================
    back-to-top
 ====================================================*/
 #back-to-top {
@@ -1151,7 +1153,7 @@ pre {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
     .toc-floating {
       display: none;
     }

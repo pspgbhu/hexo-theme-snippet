@@ -2,23 +2,18 @@
  *  hexo-theme-snippet: app.js v1.0.0
  * ======================================================================== */
 
-function Utils() {
-  return {
-    getStyle(obj, attr) {
-      if (obj.currentStyle) { // currentStyle是针对ie浏览器
-        return obj.currentStyle[attr];
-      } else {
-        return getComputedStyle(obj, false)[attr]; // 针对火狐浏览器
-      }
+window.Utils = {
+  getStyle(obj, attr) {
+    if (obj.currentStyle) { // currentStyle是针对ie浏览器
+      return obj.currentStyle[attr];
+    } else {
+      return getComputedStyle(obj, false)[attr]; // 针对火狐浏览器
     }
   }
 }
 
-function cc(params) {
-}
 
-; (function () {
-  var utils = Utils();
+;(function () {
   var
     $body = document.body,
     $mnav = document.getElementById("mnav"), //获取导航三角图标
@@ -29,7 +24,6 @@ function cc(params) {
     $gitcomment = document.getElementById("gitcomment"),
     $backToTop = document.getElementById("back-to-top"),
     timer = null;
-
 
   //手机菜单导航
   $mnav.onclick = function () {
@@ -113,17 +107,40 @@ function cc(params) {
     timer = setTimeout(function fn() {
       scrollCallback();
     }, 200);
-  });
+  }, { passive: true });
 
-
-
-  /**
-   * 加载附加功能
-   */
+  // 安装功能插件
   loadFeatures(
-    backToTop,
-    toc
+    backToTop,  // 返回顶部
+    toc,        // 吸顶目录
+    comments,   // 评论功能
   );
+
+
+  function comments() {
+    var f = {
+      el: null,
+    };
+
+    f.init = function() {
+      if (!document.querySelector('#comments')) return;
+
+      f.el = document.querySelector('.j_userNoLogin');
+      if (!f.el) {
+        return;
+      }
+      f.bindEvent();
+    };
+
+    f.bindEvent = function() {
+      // var url = 'https://github.com/login/oauth/authorize?client_id=f0109912955c9ab71e4d&scope=user:email'
+      // f.el.addEventListener('click', function() {
+      //   location.href = url;
+      // });
+    };
+
+    return f;
+  }
 
   //返回顶部
   function backToTop() {
@@ -144,7 +161,6 @@ function cc(params) {
     }
     return f;
   }
-
 
   /**
    * 书签吸顶功能
@@ -170,7 +186,7 @@ function cc(params) {
       if (window.innerWidth <= this.MIN_WIDTH) return;
 
       this.top = this.$el.offsetTop + document.querySelector('.sidebar').offsetTop;
-      this.width = utils.getStyle(this.$el, 'width');
+      this.width = window.Utils.getStyle(this.$el, 'width');
       this.$el.style.width = this.width;
       this.bindEvent();
 
@@ -182,12 +198,12 @@ function cc(params) {
       var that = this;
       var timer = null;
       this.scrollHandler = this.scrollHandler.bind(this);
-      window.addEventListener('scroll', this.scrollHandler);
+      window.addEventListener('scroll', this.scrollHandler, { passive: true });
     };
 
     f.unbindEvent = function () {
       this.unsetFloating();
-      window.removeEventListener('scroll', this.scrollHandler);
+      window.removeEventListener('scroll', this.scrollHandler, { passive: true });
     };
 
     f.scrollHandler = function (e) {
@@ -231,7 +247,8 @@ function cc(params) {
 
 
   /**
-   * 加载多个附加功能
+   * 加载多个附加功能插件
+   * 需要插件提供 init 方法
    */
   function loadFeatures() {
     var fns = Array.prototype.slice.call(arguments);
