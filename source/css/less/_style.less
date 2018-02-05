@@ -775,7 +775,7 @@ pre {
 ====================================================*/
 #comments{
     background-color: @white_color;
-    padding: 20px;
+    padding: .1px 20px;
     margin-bottom:20px;
 }
 /* prev and next link */
@@ -1197,9 +1197,15 @@ pre {
 /*====================================================
     common
 ====================================================*/
+.toc-floating {
+  .toc {
+    max-height: 400px;
+    overflow: auto;
+    // padding-right: 20px;
+    // width: calc(100% + 20px);
+  }
+}
 .toc-floating-on {
   position: fixed;
   top: 0;
-  max-height: 100%;
-  overflow-y: scroll;
 }

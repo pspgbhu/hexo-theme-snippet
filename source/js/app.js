@@ -93,9 +93,9 @@ window.Utils = {
 
   //滚动回调
   var scrollCallback = function () {
-    if ($process) {
-      $process.style.width = (getScrollTop() / ($body.scrollHeight - window.innerHeight)) * 100 + "%";
-    }
+    // if ($process) {
+    //   $process.style.width = (getScrollTop() / ($body.scrollHeight - window.innerHeight)) * 100 + "%";
+    // }
     (isPC && getScrollTop() >= 300) ? $backToTop.removeAttribute("class", "hide") : $backToTop.setAttribute("class", "hide");
     imgsAjax($ajaxImgs);
   };
@@ -113,34 +113,7 @@ window.Utils = {
   loadFeatures(
     backToTop,  // 返回顶部
     toc,        // 吸顶目录
-    comments,   // 评论功能
   );
-
-
-  function comments() {
-    var f = {
-      el: null,
-    };
-
-    f.init = function() {
-      if (!document.querySelector('#comments')) return;
-
-      f.el = document.querySelector('.j_userNoLogin');
-      if (!f.el) {
-        return;
-      }
-      f.bindEvent();
-    };
-
-    f.bindEvent = function() {
-      // var url = 'https://github.com/login/oauth/authorize?client_id=f0109912955c9ab71e4d&scope=user:email'
-      // f.el.addEventListener('click', function() {
-      //   location.href = url;
-      // });
-    };
-
-    return f;
-  }
 
   //返回顶部
   function backToTop() {
