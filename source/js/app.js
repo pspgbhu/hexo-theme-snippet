@@ -112,7 +112,7 @@ window.Utils = {
   // 安装功能插件
   loadFeatures(
     backToTop,  // 返回顶部
-    toc,        // 吸顶目录
+    toc         // 吸顶目录
   );
 
   //返回顶部
