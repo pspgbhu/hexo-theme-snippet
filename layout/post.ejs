@@ -26,13 +26,25 @@
 
     <div class="post-footer">
         <div>
-            <% if(theme.declaration.enable){ %>
-                <%- theme.declaration.title %>：<%- theme.declaration.tip %><%- theme.cc %>
+            作者：<a href="http://blog.pspgbhu.me/">Pspgbhu</a>
+        </div>
+        <div>
+            <!-- <%
+                var format = 'YYYY/MM/DD';
+                if (is_archive()) format = "MM/DD";
+            %> -->
+            <% if(page.date){ %>
+                发表日期：<%- date(page.date, 'LL') %>
             <% } %>
         </div>
         <div>
             <% if(theme.cc){ %>
                 <%= __('post_licence') %>: <%- theme.cc %>
+            <% } %>
+        </div>
+        <div>
+            <% if(theme.declaration.enable){ %>
+                <%- theme.declaration.title %>：<%- theme.declaration.tip %><%- theme.cc %>
             <% } %>
         </div>
     </div>
@@ -52,6 +64,3 @@
         <%- partial('_partial/comments', {page: page}) %>
     </div>
 <% } %>
-
-
-

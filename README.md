@@ -1,6 +1,6 @@
 更改自 hexo-theme-snippet 主题，目前用于 [pspgbhu 的博客](http://blog.pspgbhu.me)。
 
-以下内容为 hexo-theme-snippet README 原内容： 
+以下内容为 hexo-theme-snippet README 原内容：
 
 # hexo-theme-snippet
 
@@ -14,7 +14,7 @@ Snippet 简洁而不简单，也许是一款你寻找已久hexo主题。
 [![hexo version](https://img.shields.io/badge/hexo-%3E%3D%203.0-blue.svg)](http://hexo.io)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/shenliyang/hexo-theme-snippet/blob/master/LICENSE)
 
-[主题预览 Demo](http://shenliyang.github.io) 
+[主题预览 Demo](http://shenliyang.github.io)
 
 ![hexo-theme-snippet](http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/snippet-screenshots2000.jpg)
 
@@ -56,7 +56,7 @@ Snippet 简洁而不简单，也许是一款你寻找已久hexo主题。
 2. Git方式，在Hexo根目录执行：
 ``` bash
     git clone git://github.com/shenliyang/hexo-theme-snippet.git themes/snippet
-``` 
+```
 
 ### 3. 安装主题插件
 
@@ -107,7 +107,7 @@ Snippet 简洁而不简单，也许是一款你寻找已久hexo主题。
 ``` bash
     cd themes/snippet
     git pull
-``` 
+```
 
 # **主题篇**
 
@@ -120,7 +120,7 @@ Snippet 简洁而不简单，也许是一款你寻找已久hexo主题。
 
 ## menu -- 导航菜单显示{[@page:名字,@url:地址,@icon:图标]}
 menu:
-- page: home 
+- page: home
   url: /
   icon: fa-home
 
@@ -136,7 +136,7 @@ rss: /atom.xml
 ## widgets -- 6个左边小工具{@widgets:[notification,category,archive,tagcloud,friends]}
 widgets:
 - search
-- notification 
+- notification
 - social
 - category
 - archive
@@ -150,14 +150,14 @@ jsonContent:
   searchLocal: true // 是否启用本地搜索
   searchGoogle: true //是否启用谷歌搜索
   posts:
-    title: true 
+    title: true
     text: true
     content: true
     categories: false
     tags: false
 
 ## notification config --网站公告设置,支持 html 和 纯文本
-notification: |- 
+notification: |-
             <p>主题已经上线！欢迎下载或更新~ <br/>
             主题下载：<a href="https://github.com/shenliyang/hexo-theme-snippet" title="fork me" target="_blank">Snippet主题</a> <br/>
             <hr/>接受贡献，包括不限于提交问题与需求，修复代码。欢迎Pull Request<br/>支持主题：<a href="https://github.com/shenliyang/hexo-theme-snippet/stargazers">Star一下</a></p>
@@ -167,7 +167,7 @@ social:
  - name: Github
    icon: git
    href: //github.com/shenliyang
-   
+
 ## 文章分类设置{@cate_config:{@show_count:是否显示数字，@show_current: 是否高亮当前category}}
 cate_config:
    show_count: true
@@ -196,7 +196,7 @@ banner:
 
 ## 首页文章列表缩略图
 ### 加载规则: 自定义文章缩略图(在Front-matter中添加的'img'字段) > 文章内的图片 > defaultImgs(随机获取) > 无图模式列表
-  
+
 ## 自定义随机图片
 defaultImgs:
   - http://www.example.jpg //远程图片链接示例
@@ -212,13 +212,13 @@ noCategoryText: '无'
 主题名称：[参考网站](https://cdnjs.com/libraries/highlight.js)
 ## 常用可配置名称[default,github,foundation,googlecode,monokai-sublime,monokai,monokai,xcode,vs2015,tomorrow,hybrid]
 
-highlightTheme: default 
+highlightTheme: default
 
 ## 文章过期提醒功能 {@warning:{days:临界天数(默认300天,设置0关闭功能),text:提醒文字/*%d为过期总天数占位符*/}}
 warning:
-  days: 300  
+  days: 300
   text: '本文于%d天之前发表，文中内容可能已经过时。'
-  
+
 ## 文章内声明{@declaration: {enable:是否开启,title:声明标题,tip:提示内容}}
 declaration:
   enable: true
@@ -232,36 +232,36 @@ declaration:
 ### gitment
 gitment:
   enable: false
-  owner: 
-  repo: 
-  client_id: 
-  client_secret: 
-  labels: 
-  perPage: 
+  owner:
+  repo:
+  client_id:
+  client_secret:
+  labels:
+  perPage:
   maxCommentHeight:
-  
+
 ### 友言评论(默认选项)
 uyan:
   enable: true
-  uyan_id: 
+  uyan_id:
 
 
 ## 网站访问统计
 
-### 网盟CNZZ统计 参考网站: [网盟CNZZ](http://www.umeng.com/) 
-cnzz_anaylytics: 
+### 网盟CNZZ统计 参考网站: [网盟CNZZ](http://www.umeng.com/)
+cnzz_anaylytics:
 
 ### 百度统计 参考网站: [百度统计](https://tongji.baidu.com/)
-baidu_anaylytics: 
+baidu_anaylytics:
 
-### 百度文章推送  参考网站: [百度站长](http://zhanzhang.baidu.com/)  
+### 百度文章推送  参考网站: [百度站长](http://zhanzhang.baidu.com/)
 baidu_push:
 
 ### 谷歌统计 参考网站：[谷歌统计](https://www.google-analytics.com/)
-google_anaylytics: 
+google_anaylytics:
 
 ### 腾讯分析 参考网站：[腾讯分析](http://ta.qq.com/)
-tencent_analytics: 
+tencent_analytics:
 
 
 ## ICON配置 (不配则启用本地Font Icon)
@@ -277,7 +277,7 @@ version: 1.2.0
 ### 主题使用技巧及功能扩展
 1. 修改新增文章Front-matter模板,修改`scaffolds`目录下的`post.md`模板
 ``` yml
---- 
+---
 title: {{ title }} // 标题
 date: {{ date }}   // 时间
 categories:        // 分类
@@ -289,7 +289,7 @@ img:               // 自定义缩略图
 
 2. 启用站内本地搜索功能
 
-如果要使用本地站点搜索，必须安装插件hexo-generator-json-content来创建本地搜索json文件 
+如果要使用本地站点搜索，必须安装插件hexo-generator-json-content来创建本地搜索json文件
 ```bash
     npm i hexo-generator-json-content@2.2.0 -S
 ```
@@ -312,10 +312,10 @@ CI即持续集成系统。对个人而言，就是让你的代码在提交到远
 language: node_js #使用Node语言环境
 node_js: stable #安装稳定版Node
 
-sudo: false  
+sudo: false
 
 #cache 启用缓存，加快构建速度
-cache: 
+cache:
   directories:
     - "node_modules"
 
@@ -359,7 +359,7 @@ env:
 ## 3. 主题开发
 Gulp 执行启用主题二次开发模式
 ``` bash
-    gulp dev 
+    gulp dev
 ```
 会监听样式less或者JS文件的变动。然后执行上面的【主题发布】即可。
 
@@ -375,7 +375,7 @@ Gulp 执行启用主题二次开发模式
 
 ## 感谢
 
-在设计这款主题的时候参考了好多主题和博客的设计和创意，深表感谢！ 
+在设计这款主题的时候参考了好多主题和博客的设计和创意，深表感谢！
 
 ## 贡献
 接受各种形式的贡献，包括但不限于提交问题或需求，修复代码。
